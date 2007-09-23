@@ -1,0 +1,11 @@
+mpeg2dec: mpeg2dec (A library for decoding MPEG-1 and MPEG-2 streams)
+mpeg2dec:
+mpeg2dec: libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video
+mpeg2dec: streams. It is released under the terms of the GPL license.
+mpeg2dec:
+mpeg2dec: mpeg2dec is a test program for libmpeg2. It decodes mpeg-1 and
+mpeg2dec: mpeg-2 video streams, and also includes a demultiplexer for mpeg-1
+mpeg2dec: and mpeg-2 program streams.
+mpeg2dec:
+mpeg2dec: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+mpeg2dec:
