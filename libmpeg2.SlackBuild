@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# SlackBuild for mpeg2dec
+# SlackBuild for libmpeg2
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
 #
 
 . ../slack-package.conf
 
-NAME=mpeg2dec
-VERSION=0.4.1
+NAME=libmpeg2
+VERSION=0.5.1
 BUILD=1
 
 cd $TMP
@@ -23,14 +23,15 @@ CXXFLAGS=$SLKCFLAGS \
             --prefix=/usr \
 	    --mandir=/usr/man \
 	    --enable-shared=yes \
-	    --enable-static=no
+	    --enable-static=no \
+            --enable-largefile || exit 1
 
-make || exit 1
+make -j4 || exit 2
 
 PKG="$TMP/package-$NAME"
 mkdir -p $PKG
 
-make -e DESTDIR=$PKG install
+make -e DESTDIR=$PKG install || exit 3
 
 bin_perms $PKG
 ( cd $PKG; strip_bin; strip_lib )
@@ -38,11 +39,13 @@ bin_perms $PKG
 gzip_man $PKG
 
 mkdir -p $PKG/install
-install -m 644 $CWD/slack-desc     $PKG/install
+install -m 644 $CWD/slack-desc     $PKG/install/slack-desc
+install -m 644 $CWD/slack-required $PKG/install/slack-required
 
 mkdir -p $PKG/usr/src/slackbuilds/$NAME-$VERSION
-install -m 644 $CWD/slack-desc       $PKG/usr/src/slackbuilds/$NAME-$VERSION
-install -m 644 $CWD/$NAME.SlackBuild $PKG/usr/src/slackbuilds/$NAME-$VERSION
+install -m 644 $CWD/slack-desc       $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-desc
+install -m 644 $CWD/slack-required   $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-required
+install -m 644 $CWD/$NAME.SlackBuild $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME.SlackBuild
 
 cd $PKG
 PKGNAME=$NAME-$VERSION-$ARCH-$BUILD$MYIN
