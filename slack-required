@@ -1,0 +1,13 @@
+glibc-solibs >= 2.7
+libICE >= 1.0.4
+libSM >= 1.0.3
+libX11 >= 1.1.4
+libXau >= 1.0.3
+libXdmcp >= 1.0.2
+libXext >= 1.0.4
+libXrandr >= 1.2.2
+libXrender >= 0.9.4
+libXv >= 1.0.4
+libxcb >= 1.0
+sdl >= 1.2.13
+svgalib >= 1.9.25
