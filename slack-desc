@@ -1,11 +1,11 @@
-libmpeg2: libmpeg2 (a free MPEG-2 video stream decoder)
+libmpeg2: libmpeg2 (A library for decoding MPEG-1 and MPEG-2 streams)
 libmpeg2:
-libmpeg2: libmpeg2 is a free library (GPL) for decoding mpeg-2 and mpeg-1 video
-libmpeg2: streams.  The main goals in libmpeg2 developement are:
-libmpeg2:  - conformance : decodes all mpeg streams with certain restrictions
-libmpeg2:  - speed       : fastest library around
-libmpeg2:  - portability : written in C
-libmpeg2:  - reuseability: no project specific code
+libmpeg2: libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video
+libmpeg2: streams. It is released under the terms of the GPL license.
+libmpeg2:
+libmpeg2: mpeg2dec is a test program for libmpeg2. It decodes mpeg-1 and
+libmpeg2: mpeg-2 video streams, and also includes a demultiplexer for mpeg-1
+libmpeg2: and mpeg-2 program streams.
 libmpeg2:
 libmpeg2:
 libmpeg2: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
