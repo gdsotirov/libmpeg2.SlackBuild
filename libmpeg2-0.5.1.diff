@@ -1,0 +1,58 @@
+diff -N -U 3 -r libmpeg2-0.5.1-orig/configure libmpeg2-0.5.1/configure
+--- libmpeg2-0.5.1-orig/configure	2008-07-18 17:41:54.000000000 +0300
++++ libmpeg2-0.5.1/configure	2010-01-06 23:20:05.000000000 +0200
+@@ -4859,11 +4859,11 @@
+ _ACEOF
+ 
+ 	case "$host" in
+-	i386-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i386";;
+-	i486-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i486";;
+-	i586-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentium";;
+-	i686-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentiumpro";;
+-	k6-*)   TRY_CFLAGS="$OPT_CFLAGS -mcpu=k6";;
++	i386-*) TRY_CFLAGS="$OPT_CFLAGS -march=i386";;
++	i486-*) TRY_CFLAGS="$OPT_CFLAGS -march=i486";;
++	i586-*) TRY_CFLAGS="$OPT_CFLAGS -march=pentium";;
++	i686-*) TRY_CFLAGS="$OPT_CFLAGS -march=pentiumpro";;
++	k6-*)   TRY_CFLAGS="$OPT_CFLAGS -march=k6";;
+ 	esac
+ 	{ echo "$as_me:$LINENO: checking if $CC supports $TRY_CFLAGS $CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $TRY_CFLAGS $CFLAGS flags... $ECHO_C" >&6; }
+@@ -5084,7 +5084,7 @@
+ #define ARCH_SPARC
+ _ACEOF
+ 
+-	TRY_CFLAGS="$OPT_CFLAGS -mcpu=ultrasparc -mvis"
++	TRY_CFLAGS="$OPT_CFLAGS -march=ultrasparc -mvis"
+ 	{ echo "$as_me:$LINENO: checking if $CC supports $TRY_CFLAGS $CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $TRY_CFLAGS $CFLAGS flags... $ECHO_C" >&6; }
+     SAVE_CFLAGS="$CFLAGS"
+diff -N -U 3 -r libmpeg2-0.5.1-orig/configure.ac libmpeg2-0.5.1/configure.ac
+--- libmpeg2-0.5.1-orig/configure.ac	2008-07-18 17:30:17.000000000 +0300
++++ libmpeg2-0.5.1/configure.ac	2010-01-06 23:20:37.000000000 +0200
+@@ -64,11 +64,11 @@
+     i?86-* | k?-* | x86_64-* | amd64-*)
+ 	AC_DEFINE([ARCH_X86],,[x86 architecture])
+ 	case "$host" in
+-	i386-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i386";;
+-	i486-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i486";;
+-	i586-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentium";;
+-	i686-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentiumpro";;
+-	k6-*)   TRY_CFLAGS="$OPT_CFLAGS -mcpu=k6";;
++	i386-*) TRY_CFLAGS="$OPT_CFLAGS -march=i386";;
++	i486-*) TRY_CFLAGS="$OPT_CFLAGS -march=i486";;
++	i586-*) TRY_CFLAGS="$OPT_CFLAGS -march=pentium";;
++	i686-*) TRY_CFLAGS="$OPT_CFLAGS -march=pentiumpro";;
++	k6-*)   TRY_CFLAGS="$OPT_CFLAGS -march=k6";;
+ 	esac
+ 	AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"]);;
+     ppc-* | powerpc-*)
+@@ -97,7 +97,7 @@
+ 	done;;
+     sparc-* | sparc64-*)
+ 	AC_DEFINE([ARCH_SPARC],,[sparc architecture])
+-	TRY_CFLAGS="$OPT_CFLAGS -mcpu=ultrasparc -mvis"
++	TRY_CFLAGS="$OPT_CFLAGS -march=ultrasparc -mvis"
+ 	AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"]);;
+     alpha*)
+ 	AC_DEFINE([ARCH_ALPHA],,[alpha architecture]);;
